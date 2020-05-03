@@ -1,7 +1,3 @@
-# LIC: GPL
-
-$Id$
-
 This package lets you connect a Linux machine to an ISP that uses PPPoE.
 PPPoE is used by many DSL providers and some wireless providers.
 
@@ -21,21 +17,21 @@ visible to the Linux kernel.  Just how to do this is beyond the scope
 of this document.  However, if the card is the only Ethernet card in
 the system, executing:
 
-    ```sh
-	$ ifconfig en0
-	```
+```sh
+$ ifconfig en0
+```
 
 should display something like this:
-    ```sh
-	en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
-            options=400<CHANNEL_IO>
-            ether f8:ff:c2:37:07:82
-            inet6 fe80::1055:ab4e:b945:806c%en0 prefixlen 64 secured scopeid 0x6
-            inet 192.168.31.11 netmask 0xffffff00 broadcast 192.168.31.255
-            nd6 options=201<PERFORMNUD,DAD>
-            media: autoselect
-            status: active
-    ```
+```sh
+en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+        options=400<CHANNEL_IO>
+        ether f8:ff:c2:37:07:82
+        inet6 fe80::1055:ab4e:b945:806c%en0 prefixlen 64 secured scopeid 0x6
+        inet 192.168.31.11 netmask 0xffffff00 broadcast 192.168.31.255
+        nd6 options=201<PERFORMNUD,DAD>
+        media: autoselect
+        status: active
+```
 
 plust some more lines.  Your HWaddr will be different.  As long as you see
 the HWaddr line, your card should be working.
@@ -80,17 +76,17 @@ Don't edit any of the other settings unless you're an expert.
 If you are using DNS servers supplied by your ISP, edit the file
 /etc/resolv.conf to contain these lines:
 
-    ```sh
-	nameserver ip_addr_of_first_dns_server
-	nameserver ip_addr_of_second_dns_server
-	```
+```sh
+nameserver ip_addr_of_first_dns_server
+nameserver ip_addr_of_second_dns_server
+```
 
 For example:
 
-    ```sh
-	nameserver 204.101.251.1
-	nameserver 204.101.251.2
-	```
+```sh
+nameserver 204.101.251.1
+nameserver 204.101.251.2
+```
 
 
 6. Firewall your machine
@@ -116,8 +112,8 @@ As root, bring down the link by typing: pppoe-stop
 That's it!
 
 --
-Dmitry Mamontov <d,slonyara@gmail.com>
-Dianne Skoll <dfs@roaringpenguin.com>
+- Dmitry Mamontov <d,slonyara@gmail.com>
+- Dianne Skoll <dfs@roaringpenguin.com>
 
 PROBLEMS!  DIANNE, IT DOESN'T WORK!
 ---------------------------------
@@ -206,9 +202,9 @@ problem, give the Ethernet card connected to the DSL modem a fake IP
 address.  For example, if en0 is your internal LAN card and eth1 goes to
 the DSL modem, do something like this:
 
-    ```sh
-	ifconfig en1 10.0.0.1 netmask 255.255.255.0
-	```
+```sh
+ifconfig en1 10.0.0.1 netmask 255.255.255.0
+```
 
 (You may have to choose a different IP address; experiment.)
 -----------------------------------------------------------------------------
@@ -246,9 +242,9 @@ Make sure no entries in the routing table go through the Ethernet card
 connected to the DSL modem.  You might want to add these lines in
 pppoe-connect:
 
-    ```sh
-	ifconfig enx down
-	ifconfig enx up mtu 1500
-	```
+```sh
+ifconfig enx down
+ifconfig enx up mtu 1500
+```
 
 which should reset things to sane values.

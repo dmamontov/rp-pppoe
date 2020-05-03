@@ -18,9 +18,9 @@ DSL service providers.
 
 If you're lucky, the "quickstart" method will work.  After clone, become root and type:
 
-    ```sh
-	$ sudo ./go
-	```
+```sh
+$ sudo ./go
+```
 
 This should configure, compile and install the software and set up your
 DSL connection.  You'll have to answer a few questions along the way.
@@ -49,5 +49,5 @@ sudo make install
 Now read [HOW-TO-CONNECT](doc/HOW-TO-CONNECT.md)
 
 --
-Dmitry Mamontov <d.slonyara@gmail.com>
-Dianne Skoll <dfs@roaringpenguin.com>
+- Dmitry Mamontov <d.slonyara@gmail.com>
+- Dianne Skoll <dfs@roaringpenguin.com>
