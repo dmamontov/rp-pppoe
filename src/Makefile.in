@@ -41,7 +41,7 @@ LIC_DEFINE=@LIC_DEFINE@
 PPPOE_RELAY=@PPPOE_RELAY@
 
 # Program paths
-PPPOE_PATH=$(sbindir)/pppoe
+PPPOE_PATH=/usr/local/bin/pppoe
 PPPD_PATH=@PPPD@
 
 # Include ServPoET version if we're building for ServPoET
@@ -167,11 +167,10 @@ install: all
 	$(install) -m 755 ../scripts/pppoe-setup $(DESTDIR)$(sbindir)
 	-mkdir -p $(DESTDIR)$(docdir)
 	$(install) -m 644 ../doc/CHANGES $(DESTDIR)$(docdir)
-	$(install) -m 644 ../doc/KERNEL-MODE-PPPOE $(DESTDIR)$(docdir)
-	$(install) -m 644 ../doc/HOW-TO-CONNECT $(DESTDIR)$(docdir)
+	$(install) -m 644 ../doc/KERNEL-MODE-PPPOE.md $(DESTDIR)$(docdir)
+	$(install) -m 644 ../doc/HOW-TO-CONNECT.md $(DESTDIR)$(docdir)
 	$(install) -m 644 ../doc/LICENSE $(DESTDIR)$(docdir)
-	$(install) -m 644 ../README $(DESTDIR)$(docdir)
-	$(install) -m 644 ../SERVPOET $(DESTDIR)$(docdir)
+	$(install) -m 644 ../README.md $(DESTDIR)$(docdir)
 	$(install) -m 644 ../configs/pap-secrets $(DESTDIR)$(docdir)
 	-mkdir -p $(DESTDIR)$(mandir)/man8
 	for i in $(TARGETS) ; do \
@@ -188,7 +187,7 @@ install: all
 	$(install) -m 644 ../man/pppoe.conf.5 $(DESTDIR)$(mandir)/man5
 	-mkdir -p $(DESTDIR)/etc/ppp
 	-mkdir -p $(DESTDIR)$(PLUGIN_DIR)
-	-echo "# Directory created by rp-pppoe for kernel-mode plugin" > $(DESTDIR)$(PLUGIN_DIR)/README
+	-echo "# Directory created by rp-pppoe for kernel-mode plugin" > $(DESTDIR)$(PLUGIN_DIR)/README.md
 	@if test -r rp-pppoe.so; then $(install) -m 755 rp-pppoe.so $(DESTDIR)$(PLUGIN_DIR); fi
 	@for i in pppoe.conf firewall-standalone firewall-masq ; do \
 		if [ ! -f $(DESTDIR)/etc/ppp/$$i ] ; then \
@@ -247,7 +246,7 @@ distro-servpoet: distro
 distro:
 	rm -rf ../rp-pppoe-$(VERSION)$(BETA)
 	mkdir ../rp-pppoe-$(VERSION)$(BETA)
-	for i in README SERVPOET go go-gui rp-pppoe.spec ; do \
+	for i in README.md SERVPOET go go-gui rp-pppoe.spec ; do \
 		cp ../$$i ../rp-pppoe-$(VERSION)$(BETA) || exit 1; \
 	done
 	mkdir ../rp-pppoe-$(VERSION)$(BETA)/gui
@@ -263,7 +262,7 @@ distro:
 		cp ../configs/$$i ../rp-pppoe-$(VERSION)$(BETA)/configs || exit 1; \
 	done
 	mkdir ../rp-pppoe-$(VERSION)$(BETA)/doc
-	for i in CHANGES KERNEL-MODE-PPPOE HOW-TO-CONNECT LICENSE PROBLEMS ; do \
+	for i in CHANGES KERNEL-MODE-PPPOE.md HOW-TO-CONNECT.md LICENSE PROBLEMS ; do \
 		cp ../doc/$$i ../rp-pppoe-$(VERSION)$(BETA)/doc || exit 1; \
 	done
 	mkdir ../rp-pppoe-$(VERSION)$(BETA)/man

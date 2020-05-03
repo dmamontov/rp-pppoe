@@ -19,7 +19,7 @@ exec_prefix=@exec_prefix@
 # Paths to programs
 IFCONFIG=/sbin/ifconfig
 PPPD=@PPPD@
-PPPOE=@sbindir@/pppoe
+PPPOE=/usr/local/bin/pppoe
 ECHO=@ECHO@
 LOGGER="/usr/bin/logger -t `basename $0`"
 
