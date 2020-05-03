@@ -46,7 +46,8 @@ $ make
 sudo make install
 ```
 
-Now read [HOW-TO-CONNECT](doc/HOW-TO-CONNECT.md)
+#### Now read
+- [HOW-TO-CONNECT](doc/HOW-TO-CONNECT.md)
 
 --
 - Dmitry Mamontov <d.slonyara@gmail.com>
