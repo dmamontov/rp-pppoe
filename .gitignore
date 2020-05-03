@@ -1,3 +1,4 @@
+.DS_Store
 .idea
 cmake-build-debug
 src/Makefile
@@ -5,6 +6,21 @@ src/config.log
 src/config.status
 src/config.h
 src/libevent/Makefile
+src/common.o
+src/debug.o
+src/discovery.o
+src/if.o
+src/libevent/event.o
+src/libevent/event_sig.o
+src/libevent/event_tcp.o
+src/libevent/hash.o
+src/libevent/libevent.a
+src/md5.o
+src/ppp.o
+src/pppoe
+src/pppoe-server
+src/pppoe-server.o
+src/pppoe.o
 scripts/pppoe-connect
 scripts/pppoe-init
 scripts/pppoe-init-suse
