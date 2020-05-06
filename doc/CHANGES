@@ -1,5 +1,15 @@
 # LIC: GPL
 
+Changes from version 3.13 to 3.13.2:
+
+- Release 3.13.2 (2020-05-04)
+
+- Fix bugs
+
+- Add support MacOS
+
+- Add support Apple clang version 11.0.3
+
 Changes from version 3.12 to 3.13:
 
 - Release 3.13 (2018-11-25)

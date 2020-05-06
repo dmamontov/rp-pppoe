@@ -1,5 +1,5 @@
-PPP-over-Ethernet redirector for MacOS pppd
-===========================================
+PPP-over-Ethernet redirector for pppd (Linux, MacOS)
+====================================================
 
 ## Introduction
 
@@ -11,7 +11,7 @@ DSL service providers.
 
 #### Requirements
 
-1. MacOS Catalina
+1. Linux, MacOS Catalina
 2. pppd 2.4.2 or later.
 
 #### QUICKSTART
