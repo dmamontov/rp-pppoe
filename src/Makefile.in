@@ -25,7 +25,7 @@ mandir=@mandir@
 docdir=@prefix@/share/doc/rp-pppoe-$(VERSION)
 install=@INSTALL@
 install_dir=@INSTALL@ -d
-sbindir=@bindir@
+sbindir=@sbindir@
 
 # Plugin for pppd on Linux
 LINUX_KERNELMODE_PLUGIN=@LINUX_KERNELMODE_PLUGIN@
@@ -41,7 +41,7 @@ LIC_DEFINE=@LIC_DEFINE@
 PPPOE_RELAY=@PPPOE_RELAY@
 
 # Program paths
-PPPOE_PATH=/usr/local/bin/pppoe
+PPPOE_PATH=/usr/local/sbin/pppoe
 PPPD_PATH=@PPPD@
 
 # Include ServPoET version if we're building for ServPoET
